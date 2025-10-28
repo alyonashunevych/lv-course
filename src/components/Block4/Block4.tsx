@@ -1,10 +1,10 @@
 import styles from './Block4.module.scss';
-import img1 from './../../../public/img/lection_icon1.svg';
-import img2 from './../../../public/img/lection_icon2.svg';
-import img3 from './../../../public/img/lection_icon3.svg';
-import img4 from './../../../public/img/lection_icon4.svg';
-import img5 from './../../../public/img/lection_icon5.svg';
-import img6 from './../../../public/img/lection_icon6.svg';
+import img1 from '/img/lection_icon1.svg';
+import img2 from '/img/lection_icon2.svg';
+import img3 from '/img/lection_icon3.svg';
+import img4 from '/img/lection_icon4.svg';
+import img5 from '/img/lection_icon5.svg';
+import img6 from '/img/lection_icon6.svg';
 
 export const Block4 = () => {
   return (
