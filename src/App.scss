@@ -20,7 +20,11 @@
 
   @include on-mobile {
     margin-block: 0 60px;
-    gap: 60px;
+    gap: 0px;
+
+    & > :nth-child(n+3):not(:nth-last-child(5)) {
+      padding-top: 60px;
+    }
 
     &::before {
       content: '';
