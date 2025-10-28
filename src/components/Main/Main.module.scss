@@ -1,0 +1,102 @@
+@use './../../styles/global' as *;
+@use './../../styles/mixins' as *;
+
+.main {
+  position: relative;
+  @extend %grid;
+
+  button {
+    border: none;
+    width: 280px;
+    height: 80px;
+    margin-top: 66px;
+    background-color: var(--color-burgundy);
+
+    @extend %buttons-text;
+
+    @include on-tablet {
+      width: 260px;
+      height: 60px;
+      margin-top: 50px;
+    }
+
+    @include on-mobile {
+      margin-top: 30px;
+    }
+
+    &:hover {
+      background-color: var(--color-burgundy-translucent);
+    }
+  }
+
+  & nav {
+    @include on-mobile {
+      display: none;
+    }
+  }
+}
+
+.text_box,
+.photo_box {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/7;
+
+  @include on-mobile {
+    align-items: center;
+  }
+}
+
+.photo_box {
+  grid-column: 7/-1;
+  gap: 35px;
+
+  @include on-mobile {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.logo {
+  height: 47px;
+  width: fit-content;
+}
+
+.paragraph {
+  @extend %body-text;
+
+  font-size: 22px;
+  line-height: 33px;
+  width: 96%;
+  letter-spacing: -0.015em;
+
+  @include on-tablet {
+    font-size: 2vw;
+    line-height: 3.5vw;
+  }
+
+  @include on-mobile {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+.lv_background {
+  position: absolute;
+  user-select: none;
+  z-index: -1;
+  width: 410px;
+  top: 230px;
+  right: 100px;
+
+  @include on-tablet {
+    width: 40vw;
+    top: 150px;
+    right: -50px;
+  }
+
+  @include on-mobile {
+    display: none;
+  }
+}

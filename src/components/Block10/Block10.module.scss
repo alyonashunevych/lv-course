@@ -1,0 +1,60 @@
+@use './../../styles/global' as *;
+@use './../../styles/mixins' as *;
+
+.block10 {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-burgundy);
+  width: 100%;
+  padding: 70px 40px;
+
+  @include on-tablet {
+    padding: 40px 40px;
+    gap: 30px;
+  }
+
+  @include on-mobile {
+    margin-top: 60px;
+  }
+
+  button {
+    border: none;
+    width: 280px;
+    height: 70px;
+    background-color: white;
+
+    @extend %buttons-text;
+    color: black;
+
+    @include on-tablet {
+      width: 260px;
+      height: 60px;
+    }
+
+    &:hover {
+      background-color: var(--color-white-translucent);
+    }
+  }
+}
+
+.title {
+  @extend %uppercase;
+  font-size: 30px;
+  line-height: 38px;
+  text-align: center;
+  width: 40%;
+
+  @include on-tablet {
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  @include on-mobile {
+    font-size: 20px;
+    line-height: 25px;
+    width: 90%;
+  }
+}

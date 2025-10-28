@@ -1,0 +1,41 @@
+@use './../../styles/global' as *;
+@use './../../styles/mixins' as *;
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 25px;
+
+  @include on-mobile {
+    flex-direction: column;
+    height: fit-content;
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  &_item {
+    @extend %body-text;
+
+    &:first-child {
+      display: none;
+    }
+
+    @include on-tablet {
+      font-size: 1.8vw;
+    }
+
+    @include on-mobile {
+      font-family: var(--font-title);
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: normal;
+      margin: 0;
+      color: white;
+
+      &:first-child {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@use './../../styles/global' as *;
+@use './../../styles/mixins' as *;
+
+.block3 {
+  @extend %grid;
+  grid-auto-flow: column;
+  row-gap: 55px;
+
+  @include on-tablet {
+    row-gap: 40px;
+  }
+  
+  @include on-mobile {
+    row-gap: 30px;
+    padding-inline: 0;
+  }
+}
+
+.items_box {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 70px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 50px;
+  }
+
+  @include on-mobile {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 40px;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @include on-mobile {
+    align-items: center;
+  }
+
+  &_num_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+
+    @include on-mobile {
+      width: 100%;
+    }
+  }
+
+  & .number {
+    font-family: var(--font-title);
+    font-size: 51px;
+    line-height: 53px;
+    font-weight: normal;
+    margin: 0;
+    color: black;
+
+    @include on-tablet {
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+
+  & .line,
+  & .line_mobile {
+    border-bottom: 2px solid black;
+    width: 100px;
+
+    @include on-mobile {
+      border-bottom: 1px solid black;
+      width: 35%;
+    }
+  }
+
+  & .line_mobile {
+    display: none;
+
+    @include on-mobile {
+      display: flex;
+    }
+  }
+
+  &_text {
+    @extend %body-text;
+    font-size: 20px;
+    line-height: 23px;
+    width: 65%;
+
+    @include on-tablet {
+      font-size: 16px;
+      line-height: 22px;
+      max-width: 65%;
+    }
+
+    @include on-mobile {
+      text-align: center;
+      max-width: 60%;
+    }
+  }
+}

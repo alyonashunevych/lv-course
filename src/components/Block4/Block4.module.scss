@@ -1,0 +1,99 @@
+@use './../../styles/global' as *;
+@use './../../styles/mixins' as *;
+
+.block4 {
+  @extend %grid;
+  grid-auto-flow: column;
+  row-gap: 55px;
+
+  @include on-tablet {
+    row-gap: 40px;
+  }
+
+  @include on-mobile {
+    row-gap: 30px;
+  }
+}
+
+.title_box {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/-1;
+  gap: 15px;
+
+  @include on-mobile {
+    align-items: center
+  }
+}
+
+.subtitle {
+  @extend %body-text;
+  font-family: var(--font-paragraph-medium);
+
+  @include on-mobile {
+    text-align: center;
+    width: 80%;
+  }
+}
+
+.lections_box {
+  grid-column: 1/-1;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+  }
+
+  @include on-mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.lection {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+  width: 330px;
+  height: 215px;
+  background-color: var(--color-burgundy);
+  justify-self: center;
+
+  &_img {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    padding: 10px;
+    margin: 4px 0 0 4px;
+  }
+
+  &_text_box {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+    width: 60%;
+  }
+
+  &_title {
+    @extend %uppercase;
+    font-family: var(--font-paragraph-demi);
+    font-size: 18px;
+    line-height: 28px;
+    min-height: 3rem;
+  }
+
+  &_text {
+    @extend %body-text;
+    color: white;
+    line-height: 23px;
+
+    @include on-tablet {
+      width: 90%;
+      font-size: 16px;
+    }
+  }
+}

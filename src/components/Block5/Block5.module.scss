@@ -1,0 +1,54 @@
+@use './../../styles/global' as *;
+@use './../../styles/mixins' as *;
+
+.block5 {
+  @extend %grid;
+  grid-auto-flow: column;
+  row-gap: 33px;
+
+  @include on-tablet {
+    gap: 25px;
+  }
+
+
+}
+
+.item_box {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: center;
+  grid-column: 1/-1;
+
+  @include on-tablet {
+    gap: 20px;
+  }
+}
+
+.point {
+  display: flex;
+  height: 25px;
+  width: 25px;
+  background-color: var(--color-burgundy);
+  border-radius: 100%;
+
+  @include on-tablet {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.text {
+  @extend %body-text;
+  font-size: 20px;
+  font-family: var(--font-paragraph-medium);
+
+  @include on-tablet {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @include on-mobile {
+    width: 80%;
+  }
+}

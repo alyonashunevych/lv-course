@@ -1,0 +1,82 @@
+@use './../../styles/global' as *;
+@use './../../styles/mixins' as *;
+
+.block7 {
+  @extend %grid;
+  grid-auto-flow: column;
+  row-gap: 25px;
+
+}
+
+.item {
+  position: relative;
+  grid-column: 1/-1;
+  border: 3px solid var(--color-burgundy);
+  padding: 40px;
+
+  @include on-tablet {
+    padding: 30px;
+  }
+
+  &_number {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 150px;
+    width: 150px;
+    background-color: var(--color-burgundy);
+
+    font-family: var(--font-title);
+    font-size: 51px;
+    line-height: 150px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    color: white;
+
+    @include on-tablet {
+      height: 90px;
+      width: 90px;
+      font-size: 40px;
+      line-height: 90px;
+    }
+
+    @include on-mobile {
+      height: 60px;
+      width: 60px;
+      font-size: 30px;
+      line-height: 60px;
+    }
+  }
+
+  &_title,
+  &_text {
+    @extend %body-text;
+  }
+
+  &_title {
+    font-family: var(--font-paragraph-medium);
+    font-size: 24px;
+
+    @include on-tablet {
+      font-size: 20px;
+    }
+
+    @include on-mobile {
+      font-size: 18px;
+    }
+  }
+
+  &_text {
+    margin-top: 32px;
+    width: 81%;
+
+    @include on-tablet {
+      margin-top: 25px;
+    }
+
+    @include on-mobile {
+      width: 100%;
+    }
+  }
+}

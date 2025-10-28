@@ -1,0 +1,82 @@
+@use './styles/global' as *;
+@use './styles/mixins' as *;
+
+.app {
+  display: flex;
+  flex-direction: column;
+
+  margin-block: 80px 130px;
+  min-height: 100vh;
+  gap: 150px;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+
+  @include on-tablet {
+    margin-block: 30px;
+    gap: 75px;
+  }
+
+  @include on-mobile {
+    margin-block: 0 60px;
+    gap: 0px;
+
+    & > :nth-child(n+3):not(:nth-last-child(5)) {
+      padding-top: 60px;
+    }
+
+    &::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      z-index: 10;
+    }
+
+    &:has(aside.open)::before {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  .lv_background {
+    position: absolute;
+    user-select: none;
+    z-index: -1;
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  .lv1,
+  .lv3 {
+    width: 300px;
+    top: 1400px;
+    left: -100px;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  .lv2 {
+    width: 400px;
+    top: 2450px;
+    right: -100px;
+
+    @include on-tablet {
+      width: 250px;
+      top: 1200px;
+      right: -50px;
+    }
+  }
+
+  .lv3 {
+    top: 4400px;
+  }
+}

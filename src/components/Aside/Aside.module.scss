@@ -1,0 +1,51 @@
+@use './../../styles/global' as *;
+@use './../../styles/mixins' as *;
+
+.aside {
+  display: none;
+
+  @include on-mobile {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 11;
+    gap: 40px;
+    height: 100vh;
+    padding: 25px 0 35px 35px;
+    top: 0;
+    left: 10%;
+    right: 0;
+    background-color: var(--color-burgundy);
+
+    transform: translate(100%, 0);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .logo {
+    height: 117px;
+    width: fit-content;
+  }
+
+  .cross {
+    position: absolute;
+    height: 20px;
+    height: 21px;
+    width: 30px;
+    right: 20px;
+    top: 25px;
+  }
+
+  .quote, .author {
+    @extend %body-text;
+    color: white;
+    font-size: 14px;
+    line-height: 22px;
+    width: 85%;
+  }
+
+  .author {
+    font-family: var(--font-paragraph-medium);
+    margin-top: -30px;
+  }
+}

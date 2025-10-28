@@ -1,0 +1,83 @@
+@use './../../styles/global' as *;
+@use './../../styles/mixins' as *;
+
+.block6 {
+  @extend %grid;
+  grid-auto-flow: column;
+  row-gap: 40px;
+
+  @include on-mobile {
+    row-gap: 30px;
+  }
+}
+
+.author_box {
+  height: 460px;
+  align-items: center;
+  grid-column: 1/-1;
+  width: 100%;
+  height: max-content;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 38px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    align-items: start;
+  }
+
+  @include on-mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.photo {
+  height: 460px;
+  object-fit: contain;
+  object-position: top;
+
+  @include on-tablet {
+    height: fit-content;
+    width: 95%;
+  }
+
+  @include on-mobile {
+    width: 100%;
+  }
+}
+
+.name {
+  @extend %uppercase;
+
+  color: var(--color-burgundy);
+  font-size: 28px;
+  font-family: var(--font-paragraph-medium);
+  margin-bottom: 40px;
+
+   @include on-tablet {
+    font-size: 23px;
+    margin-bottom: 3vw;
+  }
+
+   @include on-mobile {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+.text {
+  @extend %body-text;
+  margin-top: 20px;
+  width: 100%;
+
+  @include on-tablet {
+    margin-top: 2vw;
+  }
+
+  @include on-mobile {
+    margin-top: 20px;
+  }
+}

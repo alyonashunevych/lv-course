@@ -1,0 +1,41 @@
+import styles from './Main.module.scss';
+import img from '/img/lila1.png';
+import lv_background from '/img/lv.png';
+import { Navigation } from '../Navigation';
+import { Header } from '../Header';
+
+type Props = {
+  onOpen: () => void;
+};
+
+export const Main: React.FC<Props> = ({ onOpen }) => {
+  return (
+    <section className={styles.main}>
+      <div className={styles.text_box}>
+        <Header onOpen={onOpen} />
+
+        <h1>Курс для психологів:</h1>
+        <h2>Консультування клієнтів з залежностями (адикціями)</h2>
+        <p className={styles.paragraph}>
+          Як бачити більше, ніж симптоми. Що потрібно знати психологу про
+          клієнтів з залежностями, щоб отримувати кращий результат і відчувати
+          свою компетентність
+        </p>
+
+        <a href="#prices"><button>Записатися на курс</button></a>
+      </div>
+
+      <div className={styles.photo_box}>
+        <Navigation />
+        <img src={img} alt="Lila Vysotska" loading="lazy"/>
+      </div>
+
+      <img
+        src={lv_background}
+        className={styles.lv_background}
+        alt="LV background"
+        loading="lazy"
+      />
+    </section>
+  );
+};

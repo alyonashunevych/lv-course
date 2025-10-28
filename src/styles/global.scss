@@ -1,0 +1,197 @@
+@use './mixins' as *;
+@use './fonts' as *;
+
+:root {
+  --font-title: 'FoglihtenNo06', serif;
+  --font-paragraph-regular: 'Futura PT Book', sans-serif;
+  --font-paragraph-medium: 'Futura PT Medium', sans-serif;
+  --font-paragraph-demi: 'Futura PT Demi', sans-serif;
+
+  --color-burgundy: #692927;
+  --color-burgundy-translucent: #692927db;
+  --color-white-translucent: #ffffffdb;
+}
+
+h1 {
+  font-family: var(--font-title);
+  font-size: 49.5px;
+  line-height: 64px;
+  font-weight: normal;
+  margin: 0;
+  color: var(--color-burgundy);
+  margin-top: 75px;
+
+  @include on-tablet {
+    font-size: 4.3vw;
+    line-height: normal;
+    margin-top: 50px;
+  }
+
+  @include on-mobile {
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    margin-top: 90px;
+  }
+}
+
+h2 {
+  font-family: var(--font-paragraph-medium);
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 35px;
+
+  @include on-tablet {
+    font-size: 3vw;
+    line-height: normal;
+  }
+
+  @include on-mobile {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    width: 90%;
+    margin-top: 3px;
+    margin-bottom: 25px;
+  }
+}
+
+h3 {
+  font-family: var(--font-title);
+  font-size: 32px;
+  line-height: 41px;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  margin: 0;
+  color: black;
+  grid-column: 1/-1;
+
+  @include on-tablet {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  @include on-mobile {
+    font-size: 25px;
+    line-height: 35px;
+    text-align: center;
+  }
+}
+
+%uppercase {
+  font-family: var(--font-paragraph-regular);
+  text-transform: uppercase;
+  color: white;
+  margin: 0;
+}
+
+%buttons-text {
+  font-family: var(--font-paragraph-medium);
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0;
+  color: white;
+
+  @include on-tablet {
+    font-size: 15px;
+  }
+}
+
+%body-text {
+  font-family: var(--font-paragraph-regular);
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+  color: black;
+
+  @include on-tablet {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+%link {
+  font-family: var(--font-paragraph-regular);
+  font-size: 15px;
+  line-height: 23px;
+  margin: 0;
+  color: black;
+  text-decoration: underline;
+}
+
+%grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(11, 40px);
+  gap: 60px;
+  justify-content: center;
+
+  @include on-tablet {
+    grid-template-columns: repeat(11, 1fr);
+    gap: 25px;
+    padding-inline: 5.25vw;
+  }
+
+  @include on-mobile {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0;
+    padding-inline: 20px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+
+  transition: all 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: fit-content;
+  margin: 0;
+}
+
+html {
+  width: 100vw;
+  overflow-y: overlay;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.open {
+  opacity: 1;
+  pointer-events: all;
+
+  transition: transform 0.3s ease-in-out;
+  transform: translate(0, 0);
+}
