@@ -10,7 +10,7 @@ import { Block8 } from './components/Block8';
 import { Block9 } from './components/Block9';
 import { Block10 } from './components/Block10';
 import { Footer } from './components/Footer';
-import lv_background from '/img/lv.png';
+import lv_background from '/img/lv.webp';
 import { useEffect, useState } from 'react';
 import { Aside } from './components/Aside/Aside';
 

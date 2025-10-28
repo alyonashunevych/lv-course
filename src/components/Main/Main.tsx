@@ -1,6 +1,6 @@
 import styles from './Main.module.scss';
-import img from '/img/lila1.png';
-import lv_background from '/img/lv.png';
+import img from '/img/lila1.webp';
+import lv_background from '/img/lv.webp';
 import { Navigation } from '../Navigation';
 import { Header } from '../Header';
 
@@ -27,14 +27,13 @@ export const Main: React.FC<Props> = ({ onOpen }) => {
 
       <div className={styles.photo_box}>
         <Navigation />
-        <img src={img} alt="Lila Vysotska" loading="lazy"/>
+        <img src={img} alt="Lila Vysotska"/>
       </div>
 
       <img
         src={lv_background}
         className={styles.lv_background}
         alt="LV background"
-        loading="lazy"
       />
     </section>
   );
