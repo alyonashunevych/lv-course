@@ -24,7 +24,8 @@
 
   .logo {
     height: 117px;
-    width: fit-content;
+    width: 90px;
+    object-fit: contain;
   }
 
   .cross {

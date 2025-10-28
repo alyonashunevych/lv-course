@@ -1,5 +1,5 @@
 import styles from './Block6.module.scss';
-import photo from './../../../public/img/lila2.webp';
+import photo from '/img/lila2.webp';
 
 export const Block6 = () => {
   return (
