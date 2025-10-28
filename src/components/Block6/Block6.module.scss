@@ -45,6 +45,8 @@
 
   @include on-mobile {
     width: 100%;
+    height: fit-content;
+    min-height: 330px;
   }
 }
 
