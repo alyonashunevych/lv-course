@@ -59,6 +59,7 @@
     overflow: hidden;
     padding: 0 24px;
     color: black;
+    transition: all 0.3s ease;
 
     &.open {
       max-height: 200px;

@@ -191,7 +191,6 @@ button {
 .open {
   opacity: 1;
   pointer-events: all;
-
   transition: transform 0.3s ease-in-out;
   transform: translate(0, 0);
 }
