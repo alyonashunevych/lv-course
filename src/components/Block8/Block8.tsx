@@ -20,7 +20,7 @@ export const Block8 = () => {
 
           <p className={styles.price_value}>4959 грн</p>
 
-          <button>Придбати</button>
+          <a href="https://lilaskandanatkh.sendpulse.online/basic-payment" target='_blank'><button>Придбати</button></a>
         </div>
 
         <div className={styles.price}>
@@ -37,7 +37,7 @@ export const Block8 = () => {
 
           <p className={styles.price_value}>7299 грн</p>
 
-          <button>Придбати</button>
+          <a href="https://lilaskandanatkh.sendpulse.online/full-payment" target='_blank'><button>Придбати</button></a>
         </div>
       </div>
     </section>
