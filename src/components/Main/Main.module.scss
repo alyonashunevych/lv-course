@@ -4,7 +4,11 @@
 .main {
   position: relative;
   @extend %grid;
-    row-gap: 30px;
+  row-gap: 30px;
+
+  @include on-mobile {
+    row-gap: 0;
+  }
 
   button {
     border: none;
@@ -18,7 +22,7 @@
     @include on-tablet {
       width: 260px;
       height: 60px;
-      margin-top: 50px;
+      margin-top: 40px;
     }
 
     @include on-mobile {
@@ -88,7 +92,7 @@
   user-select: none;
   z-index: -1;
   width: 410px;
-  top: 230px;
+  top: 280px;
   right: 100px;
 
   @include on-tablet {
@@ -111,6 +115,9 @@
 
   &_arrow {
     width: 20px;
+  }
 
+  @include on-mobile {
+    display: none;
   }
 }

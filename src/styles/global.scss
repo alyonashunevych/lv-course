@@ -24,7 +24,7 @@ h1 {
   @include on-tablet {
     font-size: 4.3vw;
     line-height: normal;
-    margin-top: 50px;
+    margin-top: 0;
   }
 
   @include on-mobile {
