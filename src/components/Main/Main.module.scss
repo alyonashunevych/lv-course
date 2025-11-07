@@ -4,6 +4,7 @@
 .main {
   position: relative;
   @extend %grid;
+    row-gap: 30px;
 
   button {
     border: none;
@@ -98,5 +99,18 @@
 
   @include on-mobile {
     display: none;
+  }
+}
+
+.back {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: max-content;
+  @extend %body-text;
+
+  &_arrow {
+    width: 20px;
+
   }
 }
