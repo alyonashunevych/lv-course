@@ -15,7 +15,7 @@ export const Block8 = () => {
             <p className={styles.price_text}>
               Практичні завдання, розбір кейсів, протоколи консультування
             </p>
-            <p className={styles.price_text}>Доступ до курсу на 1 місяць</p>
+            <p className={styles.price_text}>Доступ до курсу на 3 місяці</p>
           </div>
 
           <p className={styles.price_value}>4959 грн</p>
