@@ -40,6 +40,8 @@ export const Block8 = () => {
           <a href="https://lilaskandanatkh.sendpulse.online/full-payment" target='_blank'><button>Придбати</button></a>
         </div>
       </div>
+      
+      <p className={styles.inform}><span>✱</span>Є можливість «Оплати частинами» від Приватбанку</p>
     </section>
   );
 };
