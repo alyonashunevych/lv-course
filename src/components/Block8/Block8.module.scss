@@ -29,6 +29,7 @@
   @include on-mobile {
     flex-direction: column;
     gap: 25px;
+    order: 1;
   }
 }
 
@@ -115,11 +116,22 @@
 
 .inform {
   @extend %body-text;
+  font-family: var(--font-paragraph-demi);
   display: flex;
   flex-direction: row;
   gap: 10px;
   margin-top: -35px;
   align-self: flex-start;
+
+  @include on-tablet {
+    margin-top: -25px;
+  }
+
+  @include on-mobile {
+    order: 0;
+    margin-top: 0;
+    margin-bottom: -10px;
+  }
 
   span {
     color: var(--color-burgundy);
